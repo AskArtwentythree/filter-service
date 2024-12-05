@@ -1,9 +1,7 @@
 import pika
 import time
 
-
 STOP_WORDS = ["bird-watching", "ailurophobia", "mango"]
-
 
 def callback(ch, method, properties, body):
     message = body.decode()
@@ -16,17 +14,11 @@ def callback(ch, method, properties, body):
         ch.basic_ack(delivery_tag=method.delivery_tag)
 
 if __name__ == "__main__":
-   
-    time.sleep(20)
-
-
-    connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq'))
+    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
     channel = connection.channel()
-
   
     channel.queue_declare(queue='filter_queue')  
     channel.queue_declare(queue='uppercase_queue') 
-
     
     channel.basic_consume(queue='filter_queue', on_message_callback=callback)
     print('Filter service started. Waiting for messages.')
