@@ -21,11 +21,9 @@
 ## Video Demonstrations:  
 - **Pipes-and-Filters:**  
   [Private Video Link](https://rutube.ru/video/private/b453fa8b3777ace74baba3b1a126e725/?p=ZSR0QAvHU0EQlj)  
-  **Code:** DEOamzjg  
 
 - **Event-Driven Variations:**  
   [Private Video Link](https://rutube.ru/video/private/97308b2c4064bc12b3e94657260731de/?p=_78OPRlWeufy_9)  
-  **Code:** p34WldaA  
 
 ---
 
