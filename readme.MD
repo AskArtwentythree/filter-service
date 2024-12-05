@@ -1,30 +1,36 @@
-# Filter Service
+# TEAM 23  
 
-Filter Service for an event-driven system built using RabbitMQ and Python.
+## Participants of Team 23:  
+1. **Askar Akhmetkhanov** (SD - 03)  
+2. **Aleksei Kureikin** (CBS-01)  
+3. **Arseny Savchenko** (CBS-01)  
+4. **Said Nurullin** (GD-01)  
+5. **Mikhail Stepanov** (GD - 01)  
 
-## Requirements
+---
 
-- Docker
-- Python 3.x
+## GitHub Repositories:  
+1. [MQToEmail - Publish Service](https://github.com/dinaraparanid/MQToEmail)  
+2. [SCREAMING Service](https://github.com/SaidNurullin/SoftArchScreamingService)  
+3. [Filter Service](https://github.com/AskArtwentythree/filter-service)  
+4. [User-facing REST API](https://github.com/AlexeyKureykin/message_brokers)  
+5. [Pipes-and-Filters](https://github.com/Reelap13/SA2024_PaF)  
 
-## Setup
+---
 
-1. Clone the repository:
+## Video Demonstrations:  
+- **Pipes-and-Filters:**  
+  [Private Video Link](https://rutube.ru/video/private/b453fa8b3777ace74baba3b1a126e725/?p=ZSR0QAvHU0EQlj)  
+  **Code:** DEOamzjg  
 
-2. Build the Docker containers:
+- **Event-Driven Variations:**  
+  [Private Video Link](https://rutube.ru/video/private/97308b2c4064bc12b3e94657260731de/?p=_78OPRlWeufy_9)  
+  **Code:** p34WldaA  
 
-```bash
-docker-compose build
-```
+---
 
-3. Start the services:
+## Report:  
 
-```bash
-docker-compose up
-```
+In Pipes-and-filters tests, delays are between 1.22 to 1.29 seconds per message because of synchronous processing. While event-driven tests showed faster message processing (from 594 ms to 927 ms) because of asynchronous handling.
 
-4. To stop the running services:
-
-```bash
-docker-compose down
-```
+Event-driven systems, while fault-tolerant, require more RAM because of independent services and constant RabbitMQ connections. This makes sure that the failures in one service don't break others, but also increases resource usage. On the other hand, pipes-and-filters are efficient in resource usage, as all functions run sequentially in one service, reducing memory usage. However, this approach affects fault tolerance in the way that the approach weakens it since a failure in one part stops the entire pipeline. Generally, the choice depends on whether the system prioritizes resource efficiency or persistence.
